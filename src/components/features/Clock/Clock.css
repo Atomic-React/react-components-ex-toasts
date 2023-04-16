@@ -1,0 +1,22 @@
+.clock-container {
+	margin: 2rem 0;
+	display: flex;
+	justify-content: center;
+}
+
+.clock-block {
+	padding: 2rem 4rem;
+	box-shadow: var(--shadow);
+	border-radius: 1rem;
+	background-color: var(--white);
+}
+
+.clock-text {
+	font-size: 2rem;
+	font-weight: bold;
+}
+
+.clock-actions {
+	display: flex;
+	justify-content: space-between;
+}

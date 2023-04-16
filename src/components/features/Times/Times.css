@@ -1,0 +1,40 @@
+.times-table-container {
+	padding: 1rem 2rem;
+	box-shadow: var(--shadow);
+	border-radius: 1rem;
+	background-color: var(--white);
+	position: relative;
+}
+
+.times-alt-text {
+	text-align: center;
+	margin: 2rem 0;
+}
+
+.times-table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+.times-table th {
+	border-bottom: 1px solid var(--secondary);
+	color: var(--secondary);
+	text-align: left;
+	padding: 1rem 2rem;
+}
+
+.times-table th:last-child {
+	text-align: right;
+}
+
+.times-table tbody td {
+	padding: 1rem 2rem;
+}
+
+.times-table tbody tr:nth-child(even) {
+	background-color: var(--light);
+}
+
+.times-table tbody tr td:last-child {
+	text-align: right;
+}
