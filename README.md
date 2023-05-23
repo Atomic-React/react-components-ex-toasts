@@ -11,7 +11,7 @@ git clone git@github.com:Atomic-React/react-components-ex-toasts.git
 Go to the project folder
 
 ```bash
-cd react-components-toasts
+cd react-components-ex-toasts
 ```
 
 Install dependencies:
