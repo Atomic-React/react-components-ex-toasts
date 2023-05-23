@@ -16,7 +16,7 @@
 }
 
 .btn--warning {
-	color: var(--white);
+	color: var(--secondary);
 	background-color: var(--warning);
 }
 
