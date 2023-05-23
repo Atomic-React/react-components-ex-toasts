@@ -1,0 +1,19 @@
+.toast--primary {
+	color: var(--white);
+	background-color: var(--primary);
+}
+
+.toast--danger {
+	color: var(--white);
+	background-color: var(--danger);
+}
+
+.toast--success {
+	color: var(--white);
+	background-color: var(--success);
+}
+
+.toast--warning {
+	color: var(--secondary);
+	background-color: var(--warning);
+}
