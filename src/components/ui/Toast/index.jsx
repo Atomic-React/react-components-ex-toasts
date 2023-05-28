@@ -7,7 +7,7 @@ import { func, number, oneOf, string } from 'prop-types';
 let timeoutId;
 let intervalId;
 
-const Toast = ({ title, message, variant, delay, onClose }) => {
+const Toast = ({ title, message, variant, delay, onClose: handleClose }) => {
 
 	// We initialize the state of the countdown
 	// We need to display the time in seconds but the delay is in milliseconds, so we need to devide by 1000
@@ -32,7 +32,7 @@ const Toast = ({ title, message, variant, delay, onClose }) => {
 		// We store the timeout to clear it when the component is about to be unmounted
 		timeoutId = setTimeout(() => {
 			// When the time is out, we close the toast notification
-			onClose();
+			handleClose();
 		}, delay);
 
 		// When the component is about to be unmounted, we clear all timers
@@ -41,9 +41,6 @@ const Toast = ({ title, message, variant, delay, onClose }) => {
 			clearInterval(intervalId);
 		};
 	}, []);
-
-	// If the user click on the "X" button, we close the toast notification before the time is out
-	const handleClose = () => onClose();
 
 	return (
 		// We need a portal here to display the toast at the top level of our application
@@ -56,9 +53,9 @@ const Toast = ({ title, message, variant, delay, onClose }) => {
 					<h5>{ title }</h5>
 					<p>{ message }</p>
 				</div>
-				<div role="button" onClick={handleClose} className="toast-close">
+				<div role="button" onClick={ handleClose } className="toast-close">
 					<BiXCircle />
-					<small>{time}</small>
+					<small>{ time }</small>
 				</div>
 			</div>,
 			document.body
@@ -71,7 +68,7 @@ export default Toast;
 // Prop types validation
 
 Toast.propTypes = {
-	title: string,
+	title: string.isRequired,
 	message: string,
 	variant: oneOf(['primary', 'warning', 'danger', 'success']),
 	delay: number,
@@ -79,8 +76,7 @@ Toast.propTypes = {
 };
 
 Toast.defaultProps = {
-	title: 'New toast',
-	message: 'Toast message',
+	message: '',
 	variant: 'primary',
 	delay: 3000,
 	onClose: () => {},
